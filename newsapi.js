@@ -1,4 +1,5 @@
 const quranSurah = () => {
+    console.log('https://newsapi.org/v2/top-headlines?category=technology&apiKey=423bb3aafff14d1ea22b920cb90009b7');
     fetch('https://newsapi.org/v2/top-headlines?category=technology&apiKey=423bb3aafff14d1ea22b920cb90009b7').then(res => res.json()).then(data => displaySura(data.articles))
 }
 quranSurah();
@@ -20,11 +21,11 @@ const displaySura = data => {
     })
 }
 const searchNews = () => {
-    document.getElementById('news').textContent='';
-    const searchText=document.getElementById('search-box').value;
+    document.getElementById('news').textContent = '';
+    const searchText = document.getElementById('search-box').value;
     console.log(searchText);
     fetch(`https://newsapi.org/v2/top-headlines?q=${searchText}&category=technology&apiKey=423bb3aafff14d1ea22b920cb90009b7`).then(res => res.json()).then(data => displaySura(data.articles))
 }
-if (document.getElementById('search-box').value==='') {
+if (document.getElementById('search-box').value === '') {
     quranSurah();
 }
